@@ -91,3 +91,9 @@ def press_file(data):
     else:
         raise ValueError(f"File type must be 'external' or 'file'\n {data}")
     return path
+
+
+def press_image(data):
+    if data["type"] != "image":
+        raise ValueError("Invalid data type. Now type is", data["type"])
+    return press_file(data["image"])
